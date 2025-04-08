@@ -187,3 +187,34 @@ th, td {
 th {
   background: #222;
 }
+#mirrorBox {
+  background: #181818;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+#mirrorBox ul {
+  list-style: none;
+  padding-left: 0;
+}
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  margin-top: 1rem;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #333;
+  padding: 0.75rem;
+  color: #eee;
+  text-align: left;
+}
+
+.styled-table th {
+  background: #222;
+}

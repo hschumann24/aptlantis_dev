@@ -1,0 +1,14 @@
+[
+  {
+    "filename": "fedora-40-desktop-x86_64.iso",
+    "size": "4.2 GB",
+    "arch": "x86_64",
+    "url": "/fedora/isos/fedora-40-desktop-x86_64.iso"
+  },
+  {
+    "filename": "fedora-40-server-x86_64.iso",
+    "size": "2.1 GB",
+    "arch": "x86_64",
+    "url": "/fedora/isos/fedora-40-server-x86_64.iso"
+  }
+]
