@@ -1,0 +1,69 @@
+/* A dark background is optional, but it can help the border stand out */
+
+body {
+  background-color: #121212;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#distroGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Limit to 4 cards per row */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px; /* Center the grid with a max width */
+  margin: 0 auto; /* Center the grid horizontally */
+  align-items: stretch; /* Ensure all cards stretch to the same height */
+}
+
+/* Cards with a bold neon border and no glow effect */
+
+.distro-card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1.5px solid #00bfff;
+  border-radius: 8px;
+  padding: 20px; /* Slightly increase padding */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop-out */
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  justify-content: space-between; /* Space out content evenly */
+  height: 100%; /* Ensure cards stretch uniformly */
+}
+
+.distro-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow for the pop-out effect */
+}
+
+.distro-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card-title {
+  font-size: 1.3em; /* Slightly larger title */
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1em;
+  margin-bottom: 14px;
+  flex-grow: 1; /* Allow descriptions to take up available space */
+}
+
+.card-button {
+  background-color: #00bfff;
+  color: #fff;
+  border: none;
+  padding: 12px 18px; /* Slightly larger button */
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-button:hover {
+  background-color: #008fcc;
+}

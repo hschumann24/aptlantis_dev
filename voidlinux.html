@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Void Linux Package Index</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .file-entry {
+      padding-left: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="mb-4">Void Linux Package Index</h1>
+    <div id="packageList"></div>
+  </div>
+  <script>
+    fetch("voidlinux.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const container = document.getElementById("packageList");
+        const baseUrl = "https://aptlantis.net/repos/voidlinux/";
+  
+        Object.entries(data).forEach(([category, files]) => {
+          const section = document.createElement("details");
+          section.classList.add("mb-3");
+  
+          const summary = document.createElement("summary");
+          summary.textContent = `${category} (${files.length} files)`;
+          section.appendChild(summary);
+  
+          const list = document.createElement("ul");
+          list.classList.add("list-group", "list-group-flush");
+  
+          files.forEach((file) => {
+            const item = document.createElement("li");
+            item.classList.add("list-group-item", "file-entry");
+  
+            const link = document.createElement("a");
+            link.href = baseUrl + category + "/" + file.path;
+            link.textContent = `${file.path} — ${file.human_size}`;
+            link.setAttribute("download", "");
+            link.classList.add("text-decoration-none");
+  
+            item.appendChild(link);
+            list.appendChild(item);
+          });
+  
+          section.appendChild(list);
+          container.appendChild(section);
+        });
+      })
+      .catch((err) => {
+        console.error("Error loading JSON:", err);
+        document.getElementById("packageList").innerHTML =
+          "<div class='alert alert-danger'>Failed to load package index.</div>";
+      });
+  </script>
+  
+</body>
+</html>
