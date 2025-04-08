@@ -154,7 +154,6 @@ section {
 
 h2 {
   color: #00d0ff;
-  border-bottom: 1px solid #333;
   padding-bottom: 0.25rem;
 }
 
@@ -217,4 +216,40 @@ th {
 
 .styled-table th {
   background: #222;
+}
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1 1 400px;
+}
+
+.hero-right p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.mirror-box {
+  background-color: #181818;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.15);
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+.mirror-box ul {
+  list-style: none;
+  padding-left: 0;
 }
